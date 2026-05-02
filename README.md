@@ -57,7 +57,9 @@ Sentiment categorization and world cloud to identify trends
 
 
 Database design:
+
 tweets table:
+```
 PK id (str) -> The unique identifier of the requested Tweet
 text (str) ->The actual UTF-8 text of the Tweet
 FK author_id (str) -> The unique identifier of the User who posted this Tweet
@@ -65,7 +67,9 @@ conversation_id (str) -> The Tweet ID of the original Tweet of the conversation
 created_at (date) -> Creation time of the Tweet
 in_reply_to_user_id (str) -> If the represented Tweet is a reply, this field will contain the
 original Tweet’s author ID
+```
 users table:
+```
 PK id (str) -> The unique identifier of this user
 name (str) -> The name of the user, as they’ve defined it on their profile.
 username (str) -> The Twitter screen name, handle, or alias that this user identifies
@@ -73,7 +77,9 @@ themselves with
 created_at (date) -> The UTC datetime that the user account was created on Twitter.
 protected (boolean) ->Indicates if this user has chosen to protect their Tweets
 verified (boolean) -> Indicates if this user is a verified Twitter User.
+```
 metrics table (use extensions public_metrics and non_public_metrics):
+```
 PK id (str) -> Tweet ID
 impression_count (int) -> count of how many times the Post has been viewed (not unique by
 user
@@ -96,3 +102,4 @@ playback_50_count
 playback_75_count
 playback_100_count} (int) -> The number of users who played through each quartile in a
 video
+```
